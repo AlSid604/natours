@@ -8,7 +8,7 @@ const handleCastErrorDB = err => {
 const handleDubplicateFieldsDB = err => {
   // const message = `Duplicate field name. The Name :${err.keyValue.name} already exists.... . Please choose another one`; //will only work on name field instead of stuff like email
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
-  console.log(value);
+  // console.log(value);
   const message = `Duplicate field name. ${value} already exists.... . Please choose another one`;
   return new AppError(message, 400);
 };

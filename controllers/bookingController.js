@@ -50,7 +50,7 @@ exports.createBookingCheckout = catchAsync(async (req, res, next) => {
 
   // res.redirect(`${req.originalUrl.split('?')[0]}`);
   req.originalUrl = req.originalUrl.split('?')[0];
-  console.log(req.originalUrl);
+  // console.log(req.originalUrl);
   res.redirect(`${req.protocol}://${req.get('host')}/payment-success`);
 
   //getting rid of the price user and tour so that other people dont get it after this is done.// this will redirect them to the home page where is will go again through this loop but get stopped at the above code because we removed those so it will be false and return next()
