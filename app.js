@@ -1,19 +1,22 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const tourRouter = require('./routes/tourRoutes');
-const userRouter = require('./routes/userRoutes');
-const viewRouter = require('./routes/viewRoutes');
-const AppError = require('./utils/appError');
-const globalErrorHandler = require('./controllers/errorController');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cookieParser = require('cookie-parser');
+
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
-const cookieParser = require('cookie-parser');
+const tourRouter = require('./routes/tourRoutes');
+const viewRouter = require('./routes/viewRoutes');
+const userRouter = require('./routes/userRoutes');
+
+//start express app
 const app = express();
 
 app.set('view engine', 'pug');
